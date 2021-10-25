@@ -1,21 +1,25 @@
 {
-  "name": "cms",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.5.0",
-    "@emotion/styled": "^11.3.0",
-    "@mui/icons-material": "^5.0.4",
-    "@mui/material": "^5.0.4",
-    "classnames": "^2.2.6",
-    "framer-motion": "^4.1.17",
-    "next": "11.1.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  }
+    "name": "cms",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
+    "dependencies": {
+        "@apollo/client": "^3.4.16",
+        "@emotion/react": "^11.5.0",
+        "@emotion/styled": "^11.3.0",
+        "@material-ui/core": "^4.12.3",
+        "@mui/icons-material": "^5.0.4",
+        "@mui/material": "^5.0.4",
+        "@mui/styles": "^5.0.1",
+        "classnames": "^2.2.6",
+        "framer-motion": "^4.1.17",
+        "graphql": "^15.6.1",
+        "next": "11.1.2",
+        "react": "17.0.2",
+        "react-dom": "17.0.2"
+    }
 }
