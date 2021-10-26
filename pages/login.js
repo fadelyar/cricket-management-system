@@ -22,7 +22,7 @@ function Login(props) {
 	return (
 		<div className={classes.root}>
 			<div className={classes.background} style={{
-				backgroundImage: "url( login.jpg )",
+				backgroundImage: "url( background_image/login.jpg )",
 				backgroundSize: "cover",
 				backgroundPosition: "center center",
 			}}/>

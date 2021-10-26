@@ -1,22 +1,14 @@
 import React, {useState} from 'react';
-import {
-	Drawer,
-	IconButton,
-	List,
-	ListItem,
-	ListItemIcon,
-	ListItemText,
-	useMediaQuery
-} from "@material-ui/core";
+import {Drawer, List, ListItem, ListItemIcon, ListItemText, useMediaQuery} from "@material-ui/core";
 import ListItemButton from "@mui/material/ListItemButton";
 import classNames from "classnames";
 import User from "@mui/icons-material/Facebook";
 import {makeStyles, useTheme} from "@material-ui/core/styles";
 import {styles} from '../../assets/jss/sidebar-style'
-import MenuIcon from '@mui/icons-material/Menu'
 import {useRouter} from "next/router";
 import Avatar from "@mui/material/Avatar";
 import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
 
 
 const routerList = [
@@ -64,14 +56,14 @@ function SideBar(props) {
 				}}
 			>
 				<div className={classes.header}>
-					<Avatar src='logo.jpg' style={{width: 45, height: 45}}/>
+					<Avatar src='background_image/logo.jpg' style={{width: 45, height: 40}}/>
 					<div style={{flexGrow: 1}}/>
-					<IconButton color='inherit' size='small'>
-						<MenuIcon fontSize='large'/>
-					</IconButton>
+					<Typography variant='h4' style={{fontFamily: 'Inconsolata'}}>
+						CMS
+					</Typography>
 				</div>
 				<List className={classes.list}>
-					<Divider style={{backgroundColor: 'gray', marginBottom: 10}}/>
+					<Divider style={{backgroundColor: 'gray', marginBottom: 15}}/>
 					{
 						routerList
 							.map((value, index) => {
@@ -129,7 +121,7 @@ function SideBar(props) {
 				<div
 					className={classes.background}
 					style={{
-						backgroundImage: "url( depositphotos_103196520-stock-photo-backyard-cricket-bat-ball-and.jpg )",
+						backgroundImage: "url( background_image/depositphotos_103196520-stock-photo-backyard-cricket-bat-ball-and.jpg )",
 						backgroundSize: "cover",
 						backgroundPosition: "center center",
 					}}

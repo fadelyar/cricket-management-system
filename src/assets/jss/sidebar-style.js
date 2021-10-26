@@ -91,13 +91,10 @@ export const styles = function (theme) {
 		header: {
 			zIndex: 2,
 			color: 'white',
-			// border: '1px solid white',
 			display: 'flex',
 			justifyContent: 'center',
-			padding: 7,
-			alignItems: 'center'
-			// padding: theme.spacing(1),
-			// border: '1px solid white',
+			padding: '10px 5px 5px 8px',
+			alignItems: 'center',
 		}
 	}
 }
