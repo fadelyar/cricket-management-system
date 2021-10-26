@@ -11,16 +11,18 @@ import {
 import ListItemButton from "@mui/material/ListItemButton";
 import classNames from "classnames";
 import User from "@mui/icons-material/Facebook";
-import {makeStyles, useTheme} from "@mui/styles";
+import {makeStyles, useTheme} from "@material-ui/core/styles";
 import {styles} from '../../assets/jss/sidebar-style'
 import MenuIcon from '@mui/icons-material/Menu'
 import {useRouter} from "next/router";
+import Avatar from "@mui/material/Avatar";
+import Divider from "@mui/material/Divider";
 
 
 const routerList = [
 	{id: 'dash_board', title: 'Dash Board', url: ''},
 	{id: 'profile', title: 'Profile', url: '/profile'},
-	{id: 'compression', title: 'Compression', url: '/compression'},
+	{id: 'comparison', title: 'Comparison', url: '/comparison'},
 	{id: 'history', title: 'History', url: '/history'},
 	{id: 'social', title: 'Social', url: '/social'},
 	{id: 'login', title: 'Login', url: '/login'},
@@ -32,7 +34,7 @@ function SideBar(props) {
 
 	const classes = useStyle()
 	const [open, setOpen] = useState(true)
-	const [selectedButton, setSelectedButton] = useState(3)
+	const [selectedButton, setSelectedButton] = useState(0)
 	const theme = useTheme()
 	const query = useMediaQuery(theme.breakpoints.up('md'))
 	const router = useRouter()
@@ -62,12 +64,14 @@ function SideBar(props) {
 				}}
 			>
 				<div className={classes.header}>
+					<Avatar src='logo.jpg' style={{width: 45, height: 45}}/>
 					<div style={{flexGrow: 1}}/>
 					<IconButton color='inherit' size='small'>
 						<MenuIcon fontSize='large'/>
 					</IconButton>
 				</div>
 				<List className={classes.list}>
+					<Divider style={{backgroundColor: 'gray', marginBottom: 10}}/>
 					{
 						routerList
 							.map((value, index) => {
@@ -124,7 +128,11 @@ function SideBar(props) {
 				</List>
 				<div
 					className={classes.background}
-					style={{backgroundImage: "url( sidebar-2.jpg )"}}
+					style={{
+						backgroundImage: "url( depositphotos_103196520-stock-photo-backyard-cricket-bat-ball-and.jpg )",
+						backgroundSize: "cover",
+						backgroundPosition: "center center",
+					}}
 				/>
 			</Drawer>
 		</div>

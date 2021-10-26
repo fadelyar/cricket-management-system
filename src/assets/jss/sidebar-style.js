@@ -1,5 +1,5 @@
 import {hexToRgb} from '../utils'
-import {blackColor, successColor, whiteColor} from '../colors'
+import {blackColor, roseColor, successColor, whiteColor} from '../colors'
 
 
 export const styles = function (theme) {
@@ -83,9 +83,9 @@ export const styles = function (theme) {
 			color: "rgba(" + hexToRgb(whiteColor) + ", 0.8)",
 		},
 		selectedButton: {
-			backgroundColor: successColor[2],
+			backgroundColor: roseColor[2],
 			"&:hover,&:focus,&:visited,&": {
-				backgroundColor: successColor[2],
+				backgroundColor: roseColor[2],
 			},
 		},
 		header: {
@@ -93,6 +93,9 @@ export const styles = function (theme) {
 			color: 'white',
 			// border: '1px solid white',
 			display: 'flex',
+			justifyContent: 'center',
+			padding: 7,
+			alignItems: 'center'
 			// padding: theme.spacing(1),
 			// border: '1px solid white',
 		}

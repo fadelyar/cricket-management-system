@@ -32,8 +32,8 @@ export const loginPage = function (theme) {
 		},
 		formDiv: {
 			opacity: 0.4,
-			height: '500px',
-			width: '350px',
+			height: '470px',
+			width: '370px',
 			zIndex: 2,
 			display: 'flex',
 			// justifyContent: 'center',
@@ -55,7 +55,18 @@ export const loginPage = function (theme) {
 			flexGrow: 1,
 			width: '100%',
 			backgroundColor: 'white',
-			borderRadius: 5
+			borderRadius: 5,
+			padding: theme.spacing(2)
+		},
+		inputDiv: {
+			// border: '1px solid black',
+			marginBottom: theme.spacing(5),
+			display: 'flex',
+			color: 'gray',
+			flexDirection: 'row-reverse'
+		},
+		icon: {
+			position: 'absolute'
 		}
 	}
 }
