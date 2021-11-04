@@ -12,7 +12,7 @@ import Typography from "@mui/material/Typography";
 
 
 const routerList = [
-	{id: 'dash_board', title: 'Dash Board', url: ''},
+	{id: 'dash_board', title: 'DashBoard', url: '/'},
 	{id: 'profile', title: 'Profile', url: '/profile'},
 	{id: 'comparison', title: 'Comparison', url: '/comparison'},
 	{id: 'history', title: 'History', url: '/history'},
@@ -63,7 +63,7 @@ function SideBar(props) {
 					</Typography>
 				</div>
 				<List className={classes.list}>
-					<Divider style={{backgroundColor: 'gray', marginBottom: 15}}/>
+					{/*<Divider style={{backgroundColor: 'gray', marginBottom: 15}}/>*/}
 					{
 						routerList
 							.map((value, index) => {
@@ -89,7 +89,7 @@ function SideBar(props) {
 											}}
 											className={classNames({
 												[classes.selectedButton]:
-												selectedButton == index
+												value.title === props.selectedBar
 											})}
 										>
 											<ListItemIcon
@@ -110,7 +110,6 @@ function SideBar(props) {
 												}}
 												primary={value.title}
 												className={classes.itemText}
-												// disableTypography={true}
 											/>
 										</ListItemButton>
 									</ListItem>

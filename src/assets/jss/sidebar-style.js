@@ -1,6 +1,14 @@
-import {hexToRgb} from '../utils'
-import {blackColor, roseColor, successColor, whiteColor} from '../colors'
-
+import {drawerWidth, hexToRgb} from '../utils'
+import {
+	blackColor,
+	dangerColor,
+	infoColor,
+	primaryColor,
+	roseColor,
+	successColor,
+	whiteColor
+} from '../colors'
+import {blue} from "@mui/material/colors";
 
 export const styles = function (theme) {
 	return {
@@ -11,7 +19,7 @@ export const styles = function (theme) {
 			bottom: 0,
 			left: 0,
 			zIndex: 1,
-			width: 260,
+			width: drawerWidth,
 			boxShadow:
 				"0 10px 30px -12px rgba(" +
 				hexToRgb(blackColor) +
@@ -43,7 +51,7 @@ export const styles = function (theme) {
 			},
 		},
 		list: {
-			marginTop: theme.spacing(2),
+			marginTop: theme.spacing(1.15),
 			paddingLeft: "0",
 			paddingTop: "0",
 			paddingBottom: "0",
@@ -83,16 +91,18 @@ export const styles = function (theme) {
 			color: "rgba(" + hexToRgb(whiteColor) + ", 0.8)",
 		},
 		selectedButton: {
-			backgroundColor: roseColor[2],
+			backgroundColor: primaryColor[2],
 			"&:hover,&:focus,&:visited,&": {
-				backgroundColor: roseColor[2],
+				backgroundColor: dangerColor[2],
 			},
 		},
 		header: {
 			zIndex: 2,
+			height: 63.4,
 			color: 'white',
 			display: 'flex',
 			justifyContent: 'center',
+			backgroundColor: blue['800'],
 			padding: '10px 5px 5px 8px',
 			alignItems: 'center',
 		}

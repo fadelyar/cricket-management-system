@@ -1,3 +1,5 @@
+import {blue, green, purple, red, yellow} from '@mui/material/colors'
+
 export const hexToRgb = (input) => {
 	input = input + "";
 	input = input.replace("#", "");
@@ -23,5 +25,9 @@ export const hexToRgb = (input) => {
 		parseInt(last, 16)
 	);
 };
+
+export const arrayColor = [blue[600], red[600], green[700], purple['700'], yellow['900']]
+
+export const drawerWidth = 260
 
 
