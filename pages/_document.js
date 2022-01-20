@@ -9,10 +9,11 @@ export default class MyDocument extends Document {
 				<Head>
 					{/* PWA primary color */}
 					<meta name="theme-color"/>
-					<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet'
-							type='text/css'/>
+					<link href='http://fonts.googleapis.com/css?family=Inconsolata'
+						  rel='stylesheet'
+						  type='text/css'/>
 				</Head>
-				<body>
+				<body style={{backgroundColor: '#f2f1f1'}}>
 				<Main/>
 				<NextScript/>
 				</body>
@@ -40,7 +41,7 @@ MyDocument.getInitialProps = async (ctx) => {
 	// 3. page.render
 	// 4. document.render
 	//
-	// On the client
+	// On the apolloclient
 	// 1. app.getInitialProps
 	// 2. page.getInitialProps
 	// 3. app.render

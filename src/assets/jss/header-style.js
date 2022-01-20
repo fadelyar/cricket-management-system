@@ -23,8 +23,11 @@ const styles = function (theme) {
 		leftSideDiv: {
 			display: 'flex',
 			alignItems: 'center',
+			width: '100%',
+			marginLeft: 20,
 			[theme.breakpoints.down('xs')]: {
-				width: '100%'
+				width: '100%',
+				marginLeft: 1,
 			}
 		},
 		searchDiv: {
@@ -32,14 +35,12 @@ const styles = function (theme) {
 			border: '1px solid lightgray',
 			borderRadius: 10,
 			alignItems: 'center',
-			width: 220,
+			width: '100%',
 			paddingLeft: 5,
 			color: 'white',
-			height: 32,
+			height: 40,
 			transition: 'all 1s',
-			[theme.breakpoints.down('xs')]: {
-				width: '100%'
-			}
+			[theme.breakpoints.down('xs')]: {}
 		},
 		divGrow: {
 			flexGrow: 1,

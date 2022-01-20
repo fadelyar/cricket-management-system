@@ -1,15 +1,15 @@
 import React from 'react';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import {makeStyles} from "@material-ui/core/styles";
-import {blue} from "@mui/material/colors";
+import {headerColor} from "../../assets/colors";
 
 const useStyle = makeStyles((theme) => ({
 	menuItem: {
 		width: (props) => props.width,
 		fontFamily: 'Inconsolata',
 		'&:hover': {
-			backgroundColor: blue['500'],
+			backgroundColor: headerColor,
 			color: 'white',
 			fontWeight: 'bold',
 		}

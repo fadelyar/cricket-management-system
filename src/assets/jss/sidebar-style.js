@@ -1,14 +1,5 @@
 import {drawerWidth, hexToRgb} from '../utils'
-import {
-	blackColor,
-	dangerColor,
-	infoColor,
-	primaryColor,
-	roseColor,
-	successColor,
-	whiteColor
-} from '../colors'
-import {blue} from "@mui/material/colors";
+import {blackColor, headerColor, whiteColor} from '../colors'
 
 export const styles = function (theme) {
 	return {
@@ -20,14 +11,14 @@ export const styles = function (theme) {
 			left: 0,
 			zIndex: 1,
 			width: drawerWidth,
-			boxShadow:
-				"0 10px 30px -12px rgba(" +
-				hexToRgb(blackColor) +
-				", 0.42), 0 4px 25px 0px rgba(" +
-				hexToRgb(blackColor) +
-				", 0.12), 0 8px 10px -5px rgba(" +
-				hexToRgb(blackColor) +
-				", 0.2)",
+			// boxShadow:
+			// 	"0 10px 30px -12px rgba(" +
+			// 	hexToRgb(blackColor) +
+			// 	", 0.42), 0 4px 25px 0px rgba(" +
+			// 	hexToRgb(blackColor) +
+			// 	", 0.12), 0 8px 10px -5px rgba(" +
+			// 	hexToRgb(blackColor) +
+			// 	", 0.2)",
 		},
 		background: {
 			position: "absolute",
@@ -67,10 +58,6 @@ export const styles = function (theme) {
 			margin: 0,
 			height: 'auto',
 			padding: 7,
-
-			// "&:hover,&:focus,&:visited,&": {
-			// 	color: scale: 1,
-			// },
 		},
 		itemText: {
 			margin: "0",
@@ -91,18 +78,18 @@ export const styles = function (theme) {
 			color: "rgba(" + hexToRgb(whiteColor) + ", 0.8)",
 		},
 		selectedButton: {
-			backgroundColor: primaryColor[2],
+			backgroundColor: headerColor,
 			"&:hover,&:focus,&:visited,&": {
-				backgroundColor: dangerColor[2],
+				backgroundColor: headerColor,
 			},
 		},
 		header: {
 			zIndex: 2,
-			height: 63.4,
+			height: 53,
 			color: 'white',
 			display: 'flex',
 			justifyContent: 'center',
-			backgroundColor: blue['800'],
+			backgroundColor: headerColor,
 			padding: '10px 5px 5px 8px',
 			alignItems: 'center',
 		}

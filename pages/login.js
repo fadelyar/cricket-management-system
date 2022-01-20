@@ -5,12 +5,12 @@ import {motion} from 'framer-motion'
 import Typography from "@material-ui/core/Typography";
 import {useMediaQuery, useTheme} from "@material-ui/core";
 import {useRouter} from "next/router";
-import TextField from "@mui/material/TextField";
-import UserIcon from '@mui/icons-material/SupervisedUserCircle'
-import EmailIcon from '@mui/icons-material/Email'
-import PasswordIcon from '@mui/icons-material/LockOutlined'
-import Button from "@mui/material/Button";
-import {roseColor} from "../src/assets/colors";
+import TextField from "@material-ui/core/TextField";
+import UserIcon from '@material-ui/icons/SupervisedUserCircle'
+import EmailIcon from '@material-ui/icons/Email'
+import PasswordIcon from '@material-ui/icons/LockOutlined'
+import Button from "@material-ui/core/Button";
+import {headerColor, roseColor} from "../src/assets/colors";
 
 const useStyle = makeStyles((theme) => loginPage(theme))
 
@@ -28,7 +28,7 @@ function Login(props) {
 			}}/>
 			<motion.div className={classes.formDiv}
 							animate={{y: mobile ? 50 : 100, opacity: 1}}
-							transition={{duration: 0.8, stiffness: 2000}}
+							transition={{duration: 1.1, stiffness: 2000}}
 							initial={{y: -200, opacity: 0}}
 			>
 				<div className={classes.formHeader}>
@@ -71,7 +71,7 @@ function Login(props) {
 							/>
 							<PasswordIcon className={classes.icon} color='inherit'/>
 						</div>
-						<Button style={{color: roseColor[0], marginTop: 15}}>
+						<Button style={{color: headerColor, marginTop: 15}} variant='outlined'>
 							Submit
 						</Button>
 					</div>

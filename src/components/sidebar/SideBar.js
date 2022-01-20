@@ -1,23 +1,53 @@
-import React, {useState} from 'react';
-import {Drawer, List, ListItem, ListItemIcon, ListItemText, useMediaQuery} from "@material-ui/core";
-import ListItemButton from "@mui/material/ListItemButton";
+import React, { useState } from 'react';
+import {
+	Drawer,
+	List,
+	ListItem,
+	ListItemIcon,
+	ListItemText,
+	useMediaQuery
+} from "@material-ui/core";
 import classNames from "classnames";
-import User from "@mui/icons-material/Facebook";
-import {makeStyles, useTheme} from "@material-ui/core/styles";
-import {styles} from '../../assets/jss/sidebar-style'
-import {useRouter} from "next/router";
-import Avatar from "@mui/material/Avatar";
-import Divider from "@mui/material/Divider";
-import Typography from "@mui/material/Typography";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { styles } from '../../assets/jss/sidebar-style'
+import { useRouter } from "next/router";
+import Avatar from "@material-ui/core/Avatar";
+import LeftArrow from '@material-ui/icons/ArrowLeft'
+import IconButton from "@material-ui/core/IconButton";
+import MenuSharp from '@material-ui/icons/MenuSharp';
 
 
 const routerList = [
-	{id: 'dash_board', title: 'DashBoard', url: '/'},
-	{id: 'profile', title: 'Profile', url: '/profile'},
-	{id: 'comparison', title: 'Comparison', url: '/comparison'},
-	{id: 'history', title: 'History', url: '/history'},
-	{id: 'social', title: 'Social', url: '/social'},
-	{id: 'login', title: 'Login', url: '/login'},
+	{
+		id: 'dash_board',
+		title: 'DashBoard',
+		url: '/',
+		icon: '/sidebar-icons/icons8-dashboard-48.png'
+	},
+	{
+		id: 'profile',
+		title: 'Profile',
+		url: '/profile',
+		icon: '/sidebar-icons/icons8-user-male-100.png'
+	},
+	{
+		id: 'comparison',
+		title: 'Comparison',
+		url: '/comparison',
+		icon: '/sidebar-icons/icons8-comparison-64.png'
+	},
+	{
+		id: 'history',
+		title: 'History',
+		url: '/history',
+		icon: '/sidebar-icons/icons8-activity-history-100.png'
+	},
+	{
+		id: 'login',
+		title: 'Login',
+		url: '/login',
+		icon: '/sidebar-icons/icons8-login-128.png'
+	},
 ]
 
 const useStyle = makeStyles(styles)
@@ -25,108 +55,107 @@ const useStyle = makeStyles(styles)
 function SideBar(props) {
 
 	const classes = useStyle()
-	const [open, setOpen] = useState(true)
 	const [selectedButton, setSelectedButton] = useState(0)
 	const theme = useTheme()
-	const query = useMediaQuery(theme.breakpoints.up('md'))
+	const query = useMediaQuery(theme.breakpoints.down('sm'))
 	const router = useRouter()
 
-	const handleOpen = function () {
-		setOpen(true)
-	}
-
-	const handleClose = function () {
-		setOpen(false)
-	}
-
 	return (
-		<div>
-			<Drawer
-				transitionDuration={500}
-				// hidden={!query}
-				variant="persistent"
-				anchor={"left"}
-				open={open && query}
-				classes={{
-					paper: classes.drawerPaper
-				}}
-				onClose={handleClose}
-				ModalProps={{
-					keepMounted: true, // Better open performance on mobile.
-				}}
-			>
-				<div className={classes.header}>
-					<Avatar src='background_image/logo.jpg' style={{width: 45, height: 40}}/>
-					<div style={{flexGrow: 1}}/>
-					<Typography variant='h4' style={{fontFamily: 'Inconsolata'}}>
-						CMS
-					</Typography>
-				</div>
-				<List className={classes.list}>
-					{/*<Divider style={{backgroundColor: 'gray', marginBottom: 15}}/>*/}
-					{
-						routerList
-							.map((value, index) => {
-								return (
-									<ListItem className={classes.item}
-												 classes={{
-													 root: classes.root
-												 }}
-												 key={value.id}
-									>
-										<ListItemButton
-											onClick={async (event) => {
-												setSelectedButton(event.currentTarget.id)
-												return router.push(value.url)
-											}}
-											id={index}
-											style={{
-												height: '50px',
-												borderRadius: 4,
-												margin: 0,
-												width: '100%',
-												paddingLeft: 5
-											}}
-											className={classNames({
-												[classes.selectedButton]:
+		<Drawer
+			transitionDuration={500}
+			// hidden={!query}
+			variant={query ? 'temporary' : 'persistent'}
+			anchor={"left"}
+			open={!query ? true : props.open}
+			classes={{
+				paper: classes.drawerPaper
+			}}
+			onClose={props.handleClose}
+			ModalProps={{
+				keepMounted: true, // Better open performance on mobile.
+			}}
+		>
+			<div className={classes.header}>
+				<Avatar src='background_image/logo.jpg' style={{ width: 45, height: 40 }} />
+				<div style={{ flexGrow: 1 }} />
+			</div>
+			<List className={classes.list}>
+				{
+					routerList
+						.map((value, index) => {
+							return (
+								<ListItem className={classes.item}
+									// classes={{
+									//   root: classes.root
+									// }}
+									style={{
+										cursor: 'pointer'
+									}}
+									key={value.id}
+								>
+									<div
+										onClick={async (event) => {
+											setSelectedButton(event.currentTarget.id)
+											return router.push(value.url)
+										}}
+										id={index}
+										style={{
+											display: 'flex',
+											alignItems: 'center',
+											height: '50px',
+											borderRadius: 4,
+											margin: 0,
+											width: '100%',
+											paddingLeft: 5
+										}}
+										className={classNames({
+											[classes.selectedButton]:
 												value.title === props.selectedBar
-											})}
+										})}
+									>
+										<ListItemIcon
+											style={{
+												width: '30px',
+												padding: 0,
+												minWidth: '40px',
+												marginRight: 10,
+												color: 'lightgray'
+											}}
+
 										>
-											<ListItemIcon
+											<img src={value.icon}
 												style={{
 													width: '30px',
-													padding: 0,
-													minWidth: '40px',
-													color: 'lightgray'
+													height: '30px',
 												}}
-
-											>
-												<User color='inherit' fontSize={'large'}
-												/>
-											</ListItemIcon>
-											<ListItemText
-												primaryTypographyProps={{
-													style: {fontSize: '120%', fontFamily: 'Inconsolata'}
-												}}
-												primary={value.title}
-												className={classes.itemText}
-											/>
-										</ListItemButton>
-									</ListItem>
-								)
-							})
-					}
-				</List>
-				<div
-					className={classes.background}
-					style={{
-						backgroundImage: "url( background_image/depositphotos_103196520-stock-photo-backyard-cricket-bat-ball-and.jpg )",
-						backgroundSize: "cover",
-						backgroundPosition: "center center",
-					}}
-				/>
-			</Drawer>
-		</div>
+												alt="" />
+										</ListItemIcon>
+										<ListItemText
+											primaryTypographyProps={{
+												style: {
+													fontSize: '120%',
+													fontFamily: 'Inconsolata',
+													fontWeight: 'bold'
+												}
+											}}
+											primary={value.title}
+											className={classes.itemText}
+										/>
+									</div>
+								</ListItem>
+							)
+						})
+				}
+			</List>
+			<div
+				className={classes.background}
+				style={{
+					backgroundImage: "url( background_image/depositphotos_103196520-stock-photo-backyard-cricket-bat-ball-and.jpg )",
+					backgroundSize: "cover",
+					backgroundPosition: "center center",
+				}}
+			/>
+		</Drawer>
 	);
 }
 

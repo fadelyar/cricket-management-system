@@ -5,6 +5,7 @@ export const styles = function (theme) {
 		root: {
 			// padding: 1,
 			backgroundColor: '#f2f1f1',
+			// height: '100vh',
 			transition: 'margin 0.6s',
 			marginLeft: 0,
 			[theme.breakpoints.up('md')]: {
@@ -47,6 +48,7 @@ export const styles = function (theme) {
 			paddingLeft: 20,
 			paddingRight: 20,
 			backgroundColor: 'white',
+			marginTop: theme.spacing(2)
 		},
 		comparisonDiv: {
 			display: 'flex',

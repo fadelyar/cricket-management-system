@@ -1,4 +1,4 @@
-import {roseColor} from '../colors'
+import {headerColor, roseColor} from '../colors'
 
 export const loginPage = function (theme) {
 	return {
@@ -41,7 +41,7 @@ export const loginPage = function (theme) {
 			flexDirection: 'column'
 		},
 		formHeader: {
-			backgroundColor: roseColor[3],
+			backgroundColor: headerColor,
 			display: 'flex',
 			justifyContent: 'center',
 			alignItems: 'center',

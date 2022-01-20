@@ -1,11 +1,12 @@
 import React from 'react';
 import {styles} from '../../assets/jss/custom-form-style'
 import {makeStyles} from "@material-ui/core/styles";
-import UserIcon from "@mui/icons-material/SupervisorAccount";
-import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
-import TextareaAutosize from "@mui/material/TextareaAutosize";
-import Button from "@mui/material/Button";
+import UserIcon from "@material-ui/icons/SupervisorAccount";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import TextareaAutosize from "@material-ui/core/TextareaAutosize";
+import Button from "@material-ui/core/Button";
+import {headerColor} from "../../assets/colors";
 
 const useStyles = makeStyles(styles)
 
@@ -19,53 +20,53 @@ function CustomForm(props) {
 					<UserIcon color='inherit' fontSize='large'/>
 				</div>
 				<Typography variant='h6' className={classes.typography}
-								style={{marginLeft: 80, paddingTop: 10, color: 'gray'}}>
+							style={{marginLeft: 80, paddingTop: 10, color: 'gray'}}>
 					Edit Profile
 				</Typography>
 			</div>
 			<div className={classes.body}>
 				<div className={classes.eachDiv}>
 					<TextField variant='standard' color='secondary' className={classes.textField}
-								  label='UserName'
-								  inputProps={{
-									  style: {
-										  fontFamily: 'Inconsolata', fontSize: '110%', color: 'gray',
-									  }
-								  }}
+							   label='UserName'
+							   inputProps={{
+								   style: {
+									   fontFamily: 'Inconsolata', fontSize: '110%', color: 'gray',
+								   }
+							   }}
 					/>
 					<TextField variant='standard' color='secondary' className={classes.textField}
-								  label='FirstName'
-								  inputProps={{
-									  style: {
-										  fontFamily: 'Inconsolata', fontSize: '110%', color: 'gray'
-									  }
-								  }}
+							   label='FirstName'
+							   inputProps={{
+								   style: {
+									   fontFamily: 'Inconsolata', fontSize: '110%', color: 'gray'
+								   }
+							   }}
 					/>
 					<TextField variant='standard' color='secondary' className={classes.textField}
-								  label='LastName'
-								  inputProps={{
-									  style: {
-										  fontFamily: 'Inconsolata', fontSize: '110%', color: 'gray'
-									  }
-								  }}
+							   label='LastName'
+							   inputProps={{
+								   style: {
+									   fontFamily: 'Inconsolata', fontSize: '110%', color: 'gray'
+								   }
+							   }}
 					/>
 				</div>
 				<div className={classes.eachDiv}>
 					<TextField variant='standard' color='secondary' className={classes.textField}
-								  label='Email'
-								  inputProps={{
-									  style: {
-										  fontFamily: 'Inconsolata', fontSize: '110%', color: 'gray'
-									  }
-								  }}
+							   label='Email'
+							   inputProps={{
+								   style: {
+									   fontFamily: 'Inconsolata', fontSize: '110%', color: 'gray'
+								   }
+							   }}
 					/>
 					<TextField variant='standard' color='secondary' className={classes.textField}
-								  label='Phone'
-								  inputProps={{
-									  style: {
-										  fontFamily: 'Inconsolata', fontSize: '110%', color: 'gray'
-									  }
-								  }}
+							   label='Phone'
+							   inputProps={{
+								   style: {
+									   fontFamily: 'Inconsolata', fontSize: '110%', color: 'gray'
+								   }
+							   }}
 					/>
 				</div>
 				<div style={{
@@ -73,7 +74,7 @@ function CustomForm(props) {
 					paddingRight: 7
 				}}>
 					<Typography variant='body1' className={classes.typography}
-									style={{marginBottom: 10, color: 'gray'}}>
+								style={{marginBottom: 10, color: 'gray'}}>
 						About Me
 					</Typography>
 					<TextareaAutosize
@@ -90,7 +91,7 @@ function CustomForm(props) {
 					/>
 				</div>
 				<div style={{textAlign: 'center', width: '100%', marginTop: 30}}>
-					<Button color='secondary' variant='contained'>
+					<Button style={{backgroundColor: headerColor, color: 'white'}} variant='contained'>
 						Update Profile
 					</Button>
 				</div>
