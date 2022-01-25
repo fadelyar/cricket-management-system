@@ -3,7 +3,8 @@ import SideBar from "../src/components/sidebar/SideBar";
 import Header from "../src/components/header/Header";
 import { makeStyles } from "@material-ui/core/styles";
 import { styles } from '../src/assets/jss/common-style'
-import SlideShow from '../src/components/slideshow';
+import {useSession} from 'next-auth/react'
+import { useRouter } from 'next/router';
 
 const useStyle = makeStyles(styles)
 
@@ -11,6 +12,13 @@ const useStyle = makeStyles(styles)
 function Index() {
 	const classes = useStyle()
 	const [open, setOpen] = useState(false)
+	const { status } = useSession()
+	const router = useRouter()
+	React.useEffect(() => {
+		if (status === 'unauthenticated') {
+			router.push('/login')
+		}
+	}, [status])
 	const handleOpen = function () {
 		setOpen(true)
 	}

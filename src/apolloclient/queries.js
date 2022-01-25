@@ -1,4 +1,4 @@
-import {gql} from '@apollo/client'
+import { gql } from '@apollo/client'
 
 export const GET_PLAYER_ENTRIES = gql`
 	query PLayerEntries($name: String!, $last: Int!) {
@@ -81,5 +81,45 @@ export const GET_MATCH_BY_ID = gql`
 		  }
 		}
 	  }
+	}
+`
+export const LOGIN = gql`
+	mutation TokenAuth($name: String!, $password: String!) {
+ 		tokenAuth(name: $name, password: $password) {
+			token
+			payload
+			user {
+     		 	id
+				name
+				firstName
+				lastName
+				email
+				aboutMe
+			}
+  		}
+	}
+`
+
+export const UPDATE_USER = gql`
+	mutation UpdatedUser($userId: String!, $email: String, $firstName: String, $lastName: String, $aboutMe: String){
+	  updateUser(userId: $userId, firstName: $firstName, lastName: $lastName, email: $email, aboutMe: $aboutMe){
+   	 user {
+     		 	id
+				firstName
+				lastName
+				email
+				aboutMe
+    		}
+  		}
+	}
+`
+export const CREATE_USER = gql`
+	mutation TokenAuth($name: String!, $password: String!, $lastName: String, $email: String) {
+		registerUser(name: $name, password: $password, lastName: $lastName, email: $email) {
+			user {
+				id
+				name
+			}
+		}
 	}
 `

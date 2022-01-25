@@ -1,45 +1,61 @@
-import React, { useState, useEffect } from 'react'
-import { AnimatePresence, motion, useAnimation } from 'framer-motion'
+import React, { useState } from 'react'
+import { signIn, useSession, signOut } from 'next-auth/react'
 import { Button } from '@material-ui/core'
+import { initializeApollo } from '../src/apolloclient/apolloClient'
+import { LOGIN } from '../src/apolloclient/queries'
+// import { useState } from 'react'
+import { useEffect } from 'react'
 
 export default function About(props) {
-   const [display, setDisplay] = useState('row')
-   return (
-      <div style={{
-         display: 'flex', flexDirection: display, padding: 20,
-         border: '1px solid black', justifyContent: 'space-around',
-         alignItems: 'stretch', height: 500
-      }}>
-         {
-            [1, 2, 3, 4].map((item) => {
-               return (
-                  <motion.div
-                     layout
-                     transition={{
-                        duration: 1,
-                        stiffness: 2000,
-                     }}
-                     style={{ width: 70, height: 70, backgroundColor: 'purple' }}>
 
-                  </motion.div>
+   // const [session] = useSession()
+   const { data: session, status } = useSession()
+   return (
+      <div>
+         <h1>
+            {JSON.stringify(session?.user)}
+         </h1>
+         <Button
+            onClick={() => {
+               signIn('credentials',
+                  {
+                     name: "faisal",
+                     password: "GHSHFADM54096",
+                     // The page where you want to redirect to after a 
+                     // successful login
+                     // callbackUrl: `${window.location.origin}/account_page`
+                     redirect: false
+                  }
                )
-            })
-         }
-         <motion.div
-            layout
-            transition={{
-               duration: 1
+                  .then(({ error, status, ok, url }) => {
+                     console.log('then is executed!', error, status, ok, url);
+                  })
             }}
-            style={{ width: 70, height: 70 }}
          >
-            <Button onClick={() => {
-               setDisplay((prev) => {
-                  return prev === 'row' ? 'column' : 'row'
-               })
-            }}>
-               Change
-            </Button>
-         </motion.div>
+            Sign In
+         </Button>
+         <Button onClick={() => {
+            signOut()
+         }}>
+            Sign out
+         </Button>
       </div>
    )
 }
+
+// export async function getServerSideProps() {
+//    const apollo = initializeApollo()
+//    const { data, error } = await apollo.mutate({
+//       mutation: LOGIN,
+//       variables: {
+//          email: "noorifaisal@gmail.com",
+//          password: "12345"
+//       }
+//    })
+//    // console.log(data);
+//    return {
+//       props: {
+//          data: []
+//       }
+//    }
+// }
