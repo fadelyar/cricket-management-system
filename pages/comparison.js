@@ -11,6 +11,8 @@ import { Line } from 'react-chartjs-2'
 import CloseIcon from '@material-ui/icons/Close'
 import { useApolloClient, useLazyQuery, useQuery } from "@apollo/client";
 import { GET_ALL_PLAYERS, GET_PLAYER_ENTRIES } from '../src/apolloclient/queries'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 
 const useStyles = makeStyles(styles)
 
@@ -37,6 +39,13 @@ function Comparison(props) {
 	})
 	const { data: playerNamesData = [], loading, error: s } = useQuery(GET_ALL_PLAYERS)
 	const [getPLayerEntry, { data, error, refetch }] = useLazyQuery(GET_PLAYER_ENTRIES)
+	const { status } = useSession()
+	const router = useRouter()
+	useEffect(() => {
+		if (status === 'unauthenticated') {
+			router.push('/login')
+		}
+	}, [status])
 	useEffect(() => {
 		setShow(searchFields.length > 0)
 	}, [searchFields])
