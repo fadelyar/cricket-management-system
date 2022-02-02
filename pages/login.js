@@ -51,6 +51,8 @@ function Login(props) {
 		)
 			.then(({ error, status, ok, url }) => {
 				if (error) {
+					console.log('then is executed!', error, status, ok, url);
+
 					setOpenSnack(true)
 					setError(error)
 					return

@@ -57,7 +57,7 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:8000/graphql' :
+      uri: 
         'https://cms-api-api.herokuapp.com/graphql'
       // credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
     }),

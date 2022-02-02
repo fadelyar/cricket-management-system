@@ -15,6 +15,9 @@ const providers = [
                password: credentials.password
             }
          })
+         if (error) {
+            console.log('error', error);
+         }
          const user = data.tokenAuth
          return user
       }
