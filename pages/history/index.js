@@ -32,7 +32,6 @@ function Index(props) {
 			limit: 10
 		}
 	})
-
 	const handleClick = function (id) {
 		return router.push(`/history/${id}`)
 	}
@@ -61,7 +60,7 @@ function Index(props) {
 								</div>
 								<div className={classes.matchesDiv}>
 									{
-										data.matches.map((match, index, arr) => {
+										data && data.matches.map((match, index, arr) => {
 											return (
 												<MatchSummary handleClick={handleClick} match={match}
 													index={index} arr={arr} key={match.id }/>

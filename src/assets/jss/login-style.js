@@ -10,7 +10,7 @@ export const loginPage = function (theme) {
 			}
 		},
 		background: {
-			position: "absolute",
+			position: "fixed",
 			zIndex: "1",
 			height: "100%",
 			width: "100%",
@@ -20,7 +20,7 @@ export const loginPage = function (theme) {
 			backgroundSize: "cover",
 			backgroundPosition: "center center",
 			"&:after": {
-				position: "absolute",
+				position: "fixed",
 				zIndex: "3",
 				width: "100%",
 				height: "100%",

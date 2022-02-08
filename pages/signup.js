@@ -78,7 +78,7 @@ function Signup(props) {
             backgroundPosition: "center center",
          }} />
          <motion.div className={classes.formDiv}
-            animate={{ y: mobile ? 30 : 50, opacity: 1 }}
+            animate={{ y: mobile ? 20 : 50, opacity: 1 }}
             transition={{ duration: 1.1, stiffness: 2000 }}
             initial={{ y: -200, opacity: 0 }}
          >

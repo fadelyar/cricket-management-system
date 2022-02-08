@@ -51,14 +51,12 @@ function Login(props) {
 		)
 			.then(({ error, status, ok, url }) => {
 				if (error) {
-					console.log('then is executed!', error, status, ok, url);
 
 					setOpenSnack(true)
 					setError(error)
 					return
 				}
 				router.replace('/')
-				console.log('then is executed!', error, status, ok, url);
 			})
 	}
 	return (
@@ -74,7 +72,7 @@ function Login(props) {
 				backgroundPosition: "center center",
 			}} />
 			<motion.div className={classes.formDiv}
-				animate={{ y: mobile ? 50 : 100, opacity: 1 }}
+				animate={{ y: mobile ? 20 : 100, opacity: 1 }}
 				transition={{ duration: 1.1, stiffness: 2000 }}
 				initial={{ y: -200, opacity: 0 }}
 			>

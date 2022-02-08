@@ -57,8 +57,8 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: 
-        'https://cms-api-api.herokuapp.com/graphql'
+      uri: 'https://cms-api-api.herokuapp.com/graphql'
+        // 'https://cms-api-api.herokuapp.com/graphql'
       // credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
     }),
     cache: new InMemoryCache({
