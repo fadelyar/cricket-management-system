@@ -3,6 +3,8 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import {makeStyles} from "@material-ui/core/styles";
 import {headerColor} from "../../assets/colors";
+import { useRouter } from 'next/router';
+import {signOut} from 'next-auth/react'
 
 const useStyle = makeStyles((theme) => ({
 	menuItem: {
@@ -18,6 +20,22 @@ const useStyle = makeStyles((theme) => ({
 
 function CustomMenu(props) {
 	const classes = useStyle(props)
+	const router = useRouter()
+	const navigateTo = function (pathName) {
+		if (pathName === 'Profile') {
+			props.handleClose()
+
+			return router.push('/profile')
+		}
+		if (pathName === 'Login') {
+			props.handleClose()
+			return router.replace('/login')
+		}
+		signOut().then(() => {
+			router.push('/login')
+			props.handleClose()
+		})
+	}
 	return (
 		<Menu open={props.open} id="demo-positioned-menu" anchorEl={props.anchorEl}
 				onClose={props.handleClose}
@@ -34,7 +52,7 @@ function CustomMenu(props) {
 				props.menuItems.map((item, index) => {
 					return (
 						<MenuItem className={classes.menuItem} divider={item === 'Login'} key={index}
-									 onClick={props.handleClose}>
+									 onClick={() => navigateTo(item)}>
 							{item}
 						</MenuItem>
 					)

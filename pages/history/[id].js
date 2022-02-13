@@ -170,7 +170,6 @@ export async function getServerSideProps(context) {
 			id: id
 		}
 	})
-	console.log(data.getMatchById.teamSet[0].scorecard.playerentitySet)
 
 	return {
 		props: {

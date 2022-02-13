@@ -3,13 +3,12 @@ import SideBar from "../../src/components/sidebar/SideBar";
 import Header from "../../src/components/header/Header";
 import { styles } from '../../src/assets/jss/history-style'
 import { makeStyles } from "@material-ui/core/styles";
-import { initializeApollo } from '../../src/apolloclient/apolloClient'
 import { GET_ALL_MATCHES } from '../../src/apolloclient/queries'
 import Typography from "@material-ui/core/Typography";
 import { useRouter } from "next/router";
 import MatchSummary from "../../src/components/match-summary/MatchSummary";
 import Button from "@material-ui/core/Button";
-import { useLazyQuery, useQuery } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 import Loader from '../../src/components/Loader'
 
 
