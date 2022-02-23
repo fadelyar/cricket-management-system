@@ -30,7 +30,8 @@ function Index() {
 			<SideBar selectedBar='DashBoard' open={open} handleClose={handleClose} />
 			<div className={classes.root}>
 				<Header title='DashBoard' openDrawer={handleOpen} disabled/>
-				<div>
+				<div style={{}}>
+					This page is not complete!
 				</div>
 			</div>
 		</div>
