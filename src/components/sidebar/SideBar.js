@@ -12,9 +12,6 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { styles } from '../../assets/jss/sidebar-style'
 import { useRouter } from "next/router";
 import Avatar from "@material-ui/core/Avatar";
-import LeftArrow from '@material-ui/icons/ArrowLeft'
-import IconButton from "@material-ui/core/IconButton";
-import MenuSharp from '@material-ui/icons/MenuSharp';
 
 
 const routerList = [
@@ -134,7 +131,7 @@ function SideBar(props) {
 											primaryTypographyProps={{
 												style: {
 													fontSize: '120%',
-													fontFamily: 'Inconsolata',
+													fontFamily: 'Zen Kurenaido',
 													fontWeight: 'bold'
 												}
 											}}

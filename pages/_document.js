@@ -9,9 +9,13 @@ export default class MyDocument extends Document {
 				<Head>
 					{/* PWA primary color */}
 					<meta name="theme-color"/>
-					<link href='http://fonts.googleapis.com/css?family=Inconsolata'
+					{/* <link href='http://fonts.googleapis.com/css?family=Inconsolata'
 						  rel='stylesheet'
-						  type='text/css'/>
+						  type='text/css'/> */}
+					<link rel="stylesheet"
+						href="https://fonts.googleapis.com/css?family=Zen Kurenaido"
+						type='text/css'
+					/>
 				</Head>
 				<body style={{backgroundColor: '#f2f1f1'}}>
 				<Main/>
