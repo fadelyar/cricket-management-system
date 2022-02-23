@@ -92,7 +92,7 @@ function Login(props) {
 							<TextField fullWidth color='secondary' variant='standard'
 								placeholder='User Name...'
 								inputProps={{
-									style: { fontFamily: 'Inconsolata', fontWeight: 'bold' }
+									style: { fontFamily: 'Zen Kurenaido', fontWeight: 'bold' }
 								}}
 								value={name}
 								onChange={changeName}
@@ -106,7 +106,7 @@ function Login(props) {
 								type='password'
 								inputProps={{
 									style: {
-										fontFamily: 'Inconsolata',
+										fontFamily: 'Zen Kurenaido',
 										fontWeight: 'bold',
 										fontSize: 17
 									}
@@ -122,13 +122,13 @@ function Login(props) {
 						>
 							Submit
 						</Button>
-						<Button style={{ color: headerColor, marginTop: 20 }}
+						{/* <Button style={{ color: headerColor, marginTop: 20 }}
 							variant='outlined'
 							onClick={submit}
 							onClick={() => router.push('/signup')}
 						>
 							Don't have an account
-						</Button>
+						</Button> */}
 					</div>
 				</div>
 			</motion.div>
